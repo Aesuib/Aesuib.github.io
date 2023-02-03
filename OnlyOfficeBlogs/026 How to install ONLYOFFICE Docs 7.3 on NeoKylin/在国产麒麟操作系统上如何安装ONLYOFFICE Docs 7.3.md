@@ -1,12 +1,12 @@
 ---
 export_on_save:
   pandoc: true
-title: "在国产麒麟操作系统上如何安装ONLYOFFICE Docs 7.3"
-author: 天哥
+title: "鍦ㄥ浗浜ч簰楹熸搷浣滅郴缁熶笂濡備綍瀹夎ONLYOFFICE Docs 7.3"
+author: 澶╁摜
 date: Feb 2, 2023
 output: word_document
 ---
 
-# 在国产麒麟操作系统上如何安装ONLYOFFICE Docs 7.3
+# 鍦ㄥ浗浜ч簰楹熸搷浣滅郴缁熶笂濡備綍瀹夎ONLYOFFICE Docs 7.3
 
-
+// todo
