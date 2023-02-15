@@ -44,17 +44,17 @@ output: word_document
 
 首先是在麒麟操作系统自带的软件市场里面搜一下，有没有上架ONLYOFFICE的文档服务器软件，如果能搜到那就直接点击安装是最简单的了，然而并没有搜索到，作为对比，另一款国产Linux，深度操作系统的软件市场是能搜索到ONLYOFFICE的，更为方便，那么，麒麟操作系统下就需要选择自己手动安装ONLYOFFICE了，按照一般的Debian、Ubuntu系列的发行版的方式来安装，在ONLYOFFICE官方网站找到服务器端下载安装页面：
 
-[ONLYOFFICE Docs Community](https://www.onlyoffice.com/download-docs.aspx?from=default#docs-community)
+[下载ONLYOFFICE文档社区版](https://www.onlyoffice.com/zh/download-docs.aspx?from=default#docs-community)
 
-![img](Screenshot_2023-02-03_at_19-13-52_Download_ONLYOFFICE_Docs_ONLYOFFICE.png)
+![img](Screenshot_2023-02-15_at_20-18-59_下载_ONLYOFFICE_Docs_ONLYOFFICE.png)
 
-选择第二条，在Debian、Ubuntu及其派生发行版上安装，选择Intel的CPU，点击后打开其安装指南网页页面按照说明执行安装：
+选择第二条，在Debian、Ubuntu及其派生发行版上安装，选择Intel的CPU，因为一般的服务器的CPU都是Intel的，而ARM的CPU一般用在手机上或pad平板上，点击后打开其安装指南网页页面，按照说明执行安装：
 
 [Installing ONLYOFFICE Docs Community Edition for Debian, Ubuntu, and derivatives](https://helpcenter.onlyoffice.com/installation/docs-community-install-ubuntu.aspx?_ga=2.136308209.110839153.1675419797-433964955.1670329690)
 
 ![](Screenshot_2023-02-03_at_19-15-47_Installing_ONLYOFFICE_Docs_for_Debian_Ubuntu_and_derivatives_-_ONLYOFFICE.png)
 
-纯英文的看不懂？中文版本的可以参考上一个版本7.2版本的安装攻略：
+纯英文的看不懂？中文版本的可以参考上一个版本7.2版本的我写的安装攻略：
 
 [如何在 Fedora Linux 上安装 ONLYOFFICE Docs 7.2](https://mp.weixin.qq.com/s?__biz=MzI2MjUyNzkyNw==&mid=2247503100&idx=1&sn=c98e427295781ec40e77291b72f705d4&chksm=ea4b4224dd3ccb324863728afdbd9de470dfff5e1709bf7f3ef518d81a6abc83c71d466f78f2#rd)
 
@@ -108,10 +108,12 @@ update刷新一下官方源最后尝试一下还是不行，于是打开软件�
 
 ![img](Screenshot_2023-02-03_at_20-22-28_ubuntu_apt_update报错：由于没有公钥，无法验证下列签名_GDB_er的博客-CSDN博客.png)
 
-我再换用阿里源尝试一下
+我再换用[阿里云软件源](https://www.alibabacloud.com/help/zh/elastic-compute-service/latest/add-a-software-repository)尝试一下
 ![img](VirtualBox_AnotherPC_03_02_2023_20_19_17.png)
 
-终于把麒麟操作系统的软件源配置好了，接下来安装各种生产力软件就应该都不会出太多问题了，执行下面命令安装postgresql：
+终于把麒麟操作系统的软件源配置好了，至于什么是阿里源、大清源，在国内安装Linux后必备的这些操作，比如换国内软件源来加速、装配中文输入法、安装私人飞机配置多航线标签交换BBR协议之类的，这一系列的国内特有的装机必备基础操作，在我另外一片图文中介绍。
+
+接下来安装各种生产力软件就应该都不会出太多问题了，执行下面命令安装postgresql：
 
 ```bash
 sudo apt-get install postgresql
@@ -161,7 +163,7 @@ echo onlyoffice-documentserver onlyoffice/ds-port select <PORT_NUMBER> | sudo de
 
 如果要改变设置https端口号，不要改到443，请参考下列手册配置：
 
-[Switching ONLYOFFICE Docs to HTTPS protocol](https://helpcenter.onlyoffice.com/installation/docs-community-https-linux.aspx)
+[如何在 Ubuntu 上将 ONLYOFFICE 文档切换至 HTTPS 协议](https://blog.csdn.net/m0_68274698/article/details/126122198)
 
 ## 安装GPG key密钥
 
