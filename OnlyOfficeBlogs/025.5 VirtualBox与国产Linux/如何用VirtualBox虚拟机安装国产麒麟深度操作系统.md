@@ -177,7 +177,8 @@ service ssh start
 
 我使用最顺手的cterm工具连接，自动弹出用户名密码对话框就说明连接成功了，然后进入：
 
-[](connected.PNG)
+![](connected.PNG)
+
 这样就打通了VirtualBox虚拟机下国产Linux和主机之间的网络连接、文件互通、操作互通了，这个Linux已经可以基本日常使用，还有可能其它版本的Linux没有安装ssh服务，则安装的脚本是：
 ```bash
 sudo apt install openssh-server
