@@ -9,7 +9,7 @@ output: word_document
 
 # 在国产麒麟操作系统上如何安装ONLYOFFICE桌面编辑器V7.3
 
-[在国产麒麟操作系统上如何安装 ONLYOFFICE Docs 7.3](http://Aesuib.github.io/OnlyOfficeBlogs/026 How to install ONLYOFFICE Docs 7.3 on NeoKylin/在国产麒麟操作系统上如何安装ONLYOFFICE Docs 7.3.html)
+[在国产麒麟操作系统上如何安装 ONLYOFFICE Docs 7.3](https://aesuib.github.io/OnlyOfficeBlogs/026%20How%20to%20install%20ONLYOFFICE%20Docs%207.3%20on%20NeoKylin/%E5%9C%A8%E5%9B%BD%E4%BA%A7%E9%BA%92%E9%BA%9F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8A%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85ONLYOFFICE%20Docs%207.3.html)
 
 之前的推文介绍过，如何把国产麒麟操作系统作为服务器端，安装ONLYOFFICE文档服务器V7.3版本
 
@@ -23,7 +23,7 @@ Linux操作系统安装软件最简单的方式就是，从其自带的软件市
 
 自己的虚拟机里面的麒麟操作系统，自己先前手动从文字符终端下用aptget命令安装配置了ONLYOFFICE DOC文档服务器了的，参见之前图文：
 
-[在国产麒麟操作系统上如何安装 ONLYOFFICE Docs 7.3](http://Aesuib.github.io/OnlyOfficeBlogs/026 How to install ONLYOFFICE Docs 7.3 on NeoKylin/在国产麒麟操作系统上如何安装ONLYOFFICE Docs 7.3.html)
+[在国产麒麟操作系统上如何安装 ONLYOFFICE Docs 7.3](https://aesuib.github.io/OnlyOfficeBlogs/026%20How%20to%20install%20ONLYOFFICE%20Docs%207.3%20on%20NeoKylin/%E5%9C%A8%E5%9B%BD%E4%BA%A7%E9%BA%92%E9%BA%9F%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E4%B8%8A%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85ONLYOFFICE%20Docs%207.3.html)
 
 然后就发现自己的这个麒麟虚拟机的软件市场无法打开了，不但如此，自带的WPS也无法打开了，幸好系统自带的终端和Firefox火狐浏览器还能正常使用，于是正好尝试安装ONLYOFFICE桌面编辑器最新V7.3版本了。
 
