@@ -9,9 +9,9 @@ output: word_document
 
 # 如何使用UnicodeMath或LaTex在ONLYOFFICE中编写公式
 
-在之前的文章中介绍了ONLYOFFICE最新更新的V7.3版本的新特性：
-
 [TOC]
+
+在之前的文章中介绍了ONLYOFFICE最新更新的V7.3版本的新特性：
 
 [ONLYOFFICE文档v7.3版本携新增功能发布了！](https://mp.weixin.qq.com/s?__biz=MzI2MjUyNzkyNw==&mid=2247503981&idx=1&sn=4bb426e8bf6b8d3e86d400a6b718797c&chksm=ea4b5eb5dd3cd7a39aa0eb23a06ca3a305c478d56c6481f0bca570cf77b3af7cc4b7e630e180#rd)
 
