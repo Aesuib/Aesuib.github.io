@@ -131,16 +131,85 @@ $$\sum{F_{A,B}}=-\sum{F_{B,A}}$$
 
 $$\frac{d{\stackrel{\rightarrow}{p}}}{dt}=\frac{d{\stackrel{\rightarrow}{p_1}}}{dt}+\frac{d{\stackrel{\rightarrow}{p_2}}}{dt}$$
 
-本来是两个物体之间的作用力与反作用力，怎么原版的变成了三人行了呢？想看解释的请关注后下期分解，这里给出原版牛三公式的输入过程视频：
+本来是两个物体之间的作用力与反作用力，怎么原版的变成了三人行了呢？想看解释的请关注后下期分解，这里的动量是个矢量，说明了力、速度、加速度是有方向的，对应的矢量的字母的上方有一个向右的小箭头，这个箭头，在Unicode Math表达式里面如何输入呢？我们不知道的就需要学习，需要上网搜索，ONLYOFFICE的UnicodeMath、LaTex公式编写功能非常标准，因此与微软Office的数学公式的编写功能完全一样，所以我们可以直接上微软网站搜索这个问题，果然得到：
+
+![](MSHelp.PNG)
+
+[Linear format equations using UnicodeMath and LaTeX in Word](https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8)
+
+然后就可以快乐的在ONLYOFFICE公式编辑器里面输入原版牛三公式了，这里给出输入过程视频：
 
 // 插入牛三视频
+
+
 
 ## 4. 爱因斯坦质能方程
 
 $$E=MC^2$$
 
+这应该是现代物理学里面最著名的公式了，但是书写出来却几乎是最简单的了：
 
-#参考文献
+连续输入`E=M\times`，然后按一下空格键自动解析生成乘号`E=M×`，然后连续输入`E=M×C^2`，平方就是上角标`2`，在UnicodeMath里面上角标是`^`下角标是`_`然后连续输入上角标内的内容：`E=M× C^2`，然后按空格键即可自动转换为专业数学公式了：
+
+![](EMC2.PNG)
+
+原始版本？爱因斯坦的1912年手稿版本在这里：
+
+![](E_mc_2_IMG_0859.jpg)
+
+至于质能方程原始版本的物理意义，限于联合国核不扩散条约，我在这里就不解释了。
+
+## 5. 反查扑克牌花色与自动输入特殊符号功能
+
+数学公式就仅仅用来输入数学物理公式？这个世界上大部分数学天赋很高的人都在牌场里打扑克牌，扑克牌的四样花色在office里面如何输入？其实也可以从公式编辑器里面用UnicodeMath语法来直接输入，扑克牌的四个花色是：
+
+$$\clubsuit\diamondsuit\heartsuit\spadesuit$$
+
+同样的，这种特殊符号在公式编辑器里特殊符号区域用肉眼去寻找会非常的密集恐惧症，而我们爱玩扑克牌的人都知道四种花色的英文名称是：`clubsuit`、`diamondsuit`、`heartsuit`、`spadesuit`，那么我们就可以在公式编辑器里面输入`\`之后连续输入花色英文名`\clubsuit\diamondsuit\heartsuit\spadesuit`，然后鼠标点击转换为专业公式，神奇的见证奇迹的时刻来了，直接变为扑克牌花色的符号了！
+
+![](cards.png)
+
+这就是在Unicode编辑环境下输入字符串自动转换为特殊符号的功能，使用本地ONLYOFFICE桌面编辑器不联网的话，可以在ONLYOFFICE的`高级设置`里面:
+
+![](autocorrect.PNG)
+
+`自动修正选项`、`数学自动修正`，查看完整的字符串转换特殊字符的列表，第二个标签页`可识别的函数`则是自动转换为常用数学函数的列表，也非常实用。
+
+只是想要查看该列表的话，完整的列表非常的冗长，参考页面在这里：
+
+[AutoCorrect Features](https://helpcenter.onlyoffice.com/onlyoffice-editors/onlyoffice-document-editor/UsageInstructions/MathAutoCorrect.aspx)
+
+同样的内容，也出现在微软的Office的在线帮助手册里面：
+
+[Linear format equations using UnicodeMath and LaTeX in Word](https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8)
+
+可以对比一下ONLYOFFICE和MS Office对于Unicode转码规则的支持异同：
+
+![](compare.png)
+
+我们还可以继续一步：拷贝♡出来，粘贴到文章里面♡，从粘贴方式快捷菜单选择ctrl->t仅保留文字
+
+![](onlytext.png)
+
+即可得到公式之外的纯文本的爱心符号了：♡
+
+## 6. 一元二次方程：
+
+输入UnicodeMath公式为`a× x^2  +b×x+c=0`然后鼠标点击转换为专业公式可以得到：
+
+![](yyec.PNG)
+
+其解是：输入UnicodeMath公式为`(-b+-\sqrt(2&(b^2-4ac)))/(2a)`然后鼠标点击转换为专业公式可以得到：
+
+![](yyecroots.PNG)
+
+这个就不解释了。
+
+## 7. 其他公式
+
+太多了，这里就略去了，有兴趣的可以参考阅读下面的参考文献，通过上面这些例子，大概就能真的入门Unicode Math或LaTex在ONLYOFFICE中编写公式了。
+
+# 参考文献
 
 UTN28-PlainTextMath-v3.pdf
 
@@ -148,4 +217,9 @@ UTN28-PlainTextMath-v3.pdf
 
 [Insert equations](https://helpcenter.onlyoffice.com/ONLYOFFICE-Editors/ONLYOFFICE-Document-Editor/UsageInstructions/InsertEquation.aspx)
 
-[Linear format equations using UnicodeMath and LaTeX in Word](https://support.microsoft.com/en-us/office/linear-format-equations-using-unicodemath-and-latex-in-word-2e00618d-b1fd-49d8-8cb4-8d17f25754f8)
+[The 5 Most Important Scientific Equations of All Time](https://www.discovermagazine.com/the-sciences/the-5-most-important-scientific-equations-of-all-time)
+
+[5 Most Important Physics Equations in History](https://blog.praxilabs.com/2019/05/06/3-most-important-physics-equations-in-history/)
+
+[世界上最伟大的十大公式，你都知道哪些？](https://zhuanlan.zhihu.com/p/111407308)
+
