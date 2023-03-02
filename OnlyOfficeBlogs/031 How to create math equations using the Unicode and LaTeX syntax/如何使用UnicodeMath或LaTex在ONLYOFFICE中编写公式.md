@@ -209,6 +209,21 @@ $$\clubsuit\diamondsuit\heartsuit\spadesuit$$
 
 太多了，这里就略去了，有兴趣的可以参考阅读下面的参考文献，通过上面这些例子，大概就能真的入门Unicode Math或LaTex在ONLYOFFICE中编写公式了。
 
+## 8. 实践：头瞄火控方程组
+
+最后是我的HMD头瞄火控方程组，参考之前的图文：
+
+[funkytree飞控开发入门示例](https://mp.weixin.qq.com/s?__biz=MzI2MjUyNzkyNw==&mid=2247489711&idx=1&sn=3859c7c9dac11548e8c88b3267a42efc&chksm=ea489677dd3f1f618f143b2a0444942df60a7ed34ccdbda48c6dc00e4a02c522f7553804c66d#rd)
+
+仅仅取其中的相对方位角的公式，输入为`( (Heading<0) ? (TargetHeading-(360+Heading)) :(TargetHeading-Heading))/180`
+
+转换为专业公式为：
+
+![](lastone.PNG)
+
+效果还可以
+
+
 # 参考文献
 
 UTN28-PlainTextMath-v3.pdf
