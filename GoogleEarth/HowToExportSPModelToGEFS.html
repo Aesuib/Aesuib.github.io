@@ -1,0 +1,292 @@
+<!DOCTYPE html><html><head>
+      <title>HowToExportSPModelToGEFS</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\大白云\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.7.3\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em!important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em!important;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em!important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([for=preview]) .code-chunk .btn-group{display:none}.markdown-preview:not([for=preview]) .code-chunk .status{display:none}.markdown-preview:not([for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      <h1 class="crossnote-header" id="how-to-export-a-simple-plane-model-to-google-earth-flight-simulation">How to export a Simple Plane model to Google Earth Flight Simulation</h1>
+
+<p>I'm still playing SimplePlanes always, but not as you think. I have written a guide for how to plan a flight in Google Earth Flight Simulation.</p>
+<p><a href="https://aesuib.github.io/GoogleEarth/SR22flyingVally.html">Flying a SR-22 through the great Valley Grand Canyon</a></p>
+<p><img src="https://aesuib.github.io/GoogleEarth/SR22%E7%A9%BF%E8%B6%8A%E7%A7%91%E7%BD%97%E6%8B%89%E5%A4%9A%E5%A4%A7%E5%B3%A1%E8%B0%B7.mp4_000618.126.png" alt=""></p>
+<p>Now, I want to try to export the Simple Planes model to Google Earth Flight Simulation.</p>
+<p>As all of you know, there are only two planes you can choose from in Google Earth Flight Simulation.</p>
+<p><img src="GEFSSelector.png" alt=""></p>
+<p>Google Earth is not a open-source software, so, I think I could not develop anything for the simulation. Until I searched <strong>f16</strong> on my computer and found a file named <strong>f16.acf</strong> in the Google Earth directory, I found it written in plain text.</p>
+<p><img src="f16acfconfiguration.png" alt=""></p>
+<p>That means I could do something to it.</p>
+<h1 class="crossnote-header" id="adding-new-models-no-just-to-modify-the-original-model">Adding new models? No, just to modify the original model</h1>
+
+<p>Use <code>tree</code> command to show the structure of this flight simulation:</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash">PS C:<span class="token punctuation">\</span>Program Files<span class="token punctuation">\</span>Google<span class="token punctuation">\</span>Google Earth Pro<span class="token punctuation">\</span>client<span class="token punctuation">\</span>res<span class="token punctuation">\</span>flightsim<span class="token operator">&gt;</span> tree /f
+卷 系统 的文件夹 <span class="token environment constant">PATH</span> 列表       
+卷序列号为 64DA-4693
+C:.
+│  flightsim.ini
+│  
+├─aircraft
+│      f16.acf
+│      sr22.acf
+│      
+├─controller
+│      generic.ini
+│      genius_maxfighter_f16u.ini
+│      logitech_attack3.ini      
+│      logitech_extreme_3d.ini   
+│      logitech_force_3d.ini
+│      logitech_freedom.ini
+│      saitek_cyborg_evo.ini
+│      saitek_x52.ini
+│      speed_link_black_hawk.ini        
+│      speed_link_black_widow.ini       
+│      speed_link_cougar_flightstick.ini
+│      speed_link_dark_tornado.ini      
+│      xbox_360.ini
+│
+├─hud
+│      generic.ini
+│      sr22.ini
+│
+├─keyboard
+│      generic.ini
+│      sr22.ini
+│
+└─planet
+        earth.ini
+</pre><p>It's very simple, <strong>flightsim.ini</strong> seems to be the root configuration file.</p>
+<p><img src="addingmyplane.png" alt=""></p>
+<p>So, I added one choice of my plane here, to have a test. But, The GUI of Google Earth doesn't show any new choice. Also, I didn't find anywhere to add a photo and description of the item in the GUI,</p>
+<p><img src="GEFSSelector.png" alt=""></p>
+<p>The GUI of Google Earth is not open source, you can choose only the two original plane models. So, all the following work will be done on the original model, you must save the original flight simulation backup before any work.</p>
+<h1 class="crossnote-header" id="file-structure">file structure</h1>
+
+<p><img src="filestructure.png" alt=""></p>
+<p>Folder <strong>aircraft</strong> includes flight dynamic model <strong>.acf</strong> files for every plane. It is the core configuration of a model</p>
+<p>Folder <strong>controller</strong> includes <strong>.ini</strong> files for different controllers. But, GE FlightSimulation is not a complicated vivid flight simulation, I do not need a flight controller, and prefer to use a mouse and keyboard.</p>
+<p>Folder <strong>hud</strong> includes <strong>.ini</strong> files for HUD of different planes. F16 use the <strong>generic.ini</strong></p>
+<p>Folder <strong>keyboard</strong> includes <strong>.ini</strong> files for flying with keyboard and mouse only, the default is ok</p>
+<p>Folder <strong>planet</strong> includes <strong>.ini</strong> for parameters of the planet, for example, our Earth, but you can add configurations for Mars.</p>
+<p>No cockpit? you can add a cockpit photo into GEFS in fact.</p>
+<h1 class="crossnote-header" id="flight-dyanmic-model">Flight Dyanmic Model</h1>
+
+<p>The original models are convenient for most of the flights. But, there are two pain points.</p>
+<h2 class="crossnote-header" id="hypersonic-aircraft">Hypersonic aircraft</h2>
+
+<p><img src="intercontinental.png" alt=""></p>
+<p>One pain point is the long flight of the Intercontinental. I used to draw actual flight plans from Asia to America, The plan is perfect, but the flight is boring. There isn't an automated flight mode in GEFS, and it does not provide time acceleration, so, I have to control F16 for hours.</p>
+<p>I need a hypersonic aircraft to fly anywhere on the earth in less than half an hour.</p>
+<p>We have a common saying "力大砖飞" which means, Power enough brick can fly! So, I modified the f16.acf file:</p>
+<p><img src="HyperSonicAcf.png" alt=""></p>
+<p>Increase the power and decrease the mass, this will make a F16 fly hypersonic!</p>
+<p><a href="f16-HyperSonic.acf">download the hypersonic f16 .acf file here</a></p>
+<p>Then, rename to f16.acf and replace the original f16.acf, enjoy yourself!</p>
+<p>// insert my video here</p>
+<iframe width="1280" height="708" src="https://www.youtube.com/embed/e5yWmni-MQU" title="Google Earth Pro FlightSimulation Hypersonic Aircraft Model" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<p>Pay attention! it flies very fast, so, you must control it gently, or GE will crash. To take off from the runway, minimum power is enough, and to land, decrease power to zero.</p>
+<h2 class="crossnote-header" id="low-speed-super-maneuver-helicopter">low speed super maneuver helicopter</h2>
+
+<p>Another pain point is to view the terrain carefully, onboard an aircraft. The aircraft should fly very slowly, make turns very quickly, easy to take off and land anywhere. Just like what I fly in this:</p>
+<p><a href="https://aesuib.github.io/GoogleEarth/SR22flyingVally.html">Flying a SR-22 through the great Valley Grand Canyon</a></p>
+<p><img src="https://aesuib.github.io/GoogleEarth/SR22%E7%A9%BF%E8%B6%8A%E7%A7%91%E7%BD%97%E6%8B%89%E5%A4%9A%E5%A4%A7%E5%B3%A1%E8%B0%B7.mp4_000127.016.png" alt=""></p>
+<p>So, a helicopter is a good choice, but the original configurations are all fixed-wing aircraft. A lot of parameters should be modified in the .acf file to model a rotary-wings flight dynamic model.</p>
+<p>I googled a long time and found them finally.</p>
+<p><a href="https://googleearthcommunity.proboards.com/thread/4186/new-flyable-planes-google-earth">New Flyable Planes for Google Earth</a></p>
+<p>and this webpage link,</p>
+<p><a href="https://www.gearthblog.com/blog/archives/2009/08/planes_for_google_earth_flight_simu.html">Planes For Google Earth Flight Simulator</a></p>
+<p>But the models on the second link are not available now, it's too old and the keyhole website has closed down. So, I downloaded all the models on the first link, and saved all in my space here:</p>
+<table>
+<thead>
+<tr>
+<th>file</th>
+<th>model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="f16%20f35.acf">f16 f35.acf</a></td>
+<td>F-35</td>
+</tr>
+<tr>
+<td><a href="f16%20typhoon.acf">f16 typhoon.acf</a></td>
+<td>Typhoon</td>
+</tr>
+<tr>
+<td><a href="f16%20p51.acf">f16 p51.acf</a></td>
+<td>P-51</td>
+</tr>
+<tr>
+<td><a href="f16%20m2000.acf">f16 m2000.acf</a></td>
+<td>Mirage-2000</td>
+</tr>
+<tr>
+<td><a href="f16%20gripen.acf">f16 gripen.acf</a></td>
+<td>Gripen</td>
+</tr>
+<tr>
+<td><a href="f16%20f15.acf">f16 f15.acf</a></td>
+<td>F-15</td>
+</tr>
+<tr>
+<td><a href="f16%20su27.acf">f16 su27.acf</a></td>
+<td>Su-27</td>
+</tr>
+<tr>
+<td><a href="f16%20crj900.acf">f16 crj900.acf</a></td>
+<td>CRJ-900</td>
+</tr>
+<tr>
+<td><a href="f16%20apache.acf">f16 apache.acf</a></td>
+<td>Apache</td>
+</tr>
+</tbody>
+</table>
+<p>Among these models, there is a rotary-wing aircraft, Apache. Use the apache file to replace the sr22 fdm file, and then, enjoy yourself!</p>
+<p>// insert my video here</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/hyznS3mmgqQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<p>Pay attention! helicopter is difficult for a fixed-wing aircraft pilot to fly.</p>
+<blockquote>
+<p>Remember that the landing gear on the aircraft are not retractable and should remain "out". Since helicopters do not have flaps, it is not necessary to use them when flying. For sharper turns, roll the aircraft while pressing 0 or Enter on the Number Pad, or Shift + right or left arrow keys to make use of the Anti Torque Pedals. To recenter the aircraft press C or 5 on the Number Pad. When landing, try slowly approaching the landing area while descending at a gentle and steady rate</p>
+<p>Word of warning: Do not let the speed of this aircraft rise beyond 200 knots. Not only is this the realistic "do not exceed speed" for this aircraft, but if you fly it much faster, it will also cause Google Earth to become unresponsive, and might even crash your computer.</p>
+</blockquote>
+<p>The FDM of the Apache has been changed a lot from the original F16:</p>
+<p><img src="ApacheVSF16.png" alt=""></p>
+<p>You can modify it freely.</p>
+<h1 class="crossnote-header" id="cockpit-2d">Cockpit 2D</h1>
+
+<p>Expect the HUD, you can add a 2D cockpit to Google Earth Flight Simulation. Google Earth does support importing 3-D models, but 3D models will be located on the earth's surface, or move on a planned route on the earth, 3D models cannot be fixed overlay your screen, so, only a 2D snapshot of a cockpit can be used in GEFS.</p>
+<p>The 2D cockpit is not a real cockpit, the flight instruments on the dashboard do not work, It's just a picture, statically, overlaid on the view. But it is better than no cockpit, the cockpit dashboard will be shown bottom in the view window, with windshield frames left and right.</p>
+<p>Most importantly, the windshield glass should be transparent so that you can see through the overlay 2D cockpit picture, the Out-The-Window(OTW) view. You must view the terrain from inside the cockpit of an aircraft. So, the final picture should be in .png file format,  with the OTW part transparent.</p>
+<p>Let's do it!</p>
+<h2 class="crossnote-header" id="choose-an-aircraft-for-your-flight-task">Choose an aircraft for your flight task</h2>
+
+<p>So, the work should start with making a picture of a cockpit. Let's take the <a href="#low-speed-super-maneuver-helicopter">low speed model</a> above for an example.</p>
+<p>For land-viewing in the sky, the aircraft should have windows very very big, Most fixed-wing aircraft have little view downward, so you should choose a helicopter very small with chin windows very large. Finally, I found <a href="https://composite-fx.com/models/xe/">Mosquito helicopter</a></p>
+<p><img src="xe-model-3-ba50e3ee.jpeg" alt=""></p>
+<h2 class="crossnote-header" id="find-the-aircraft-model-on-simpleplanes-website">Find the aircraft model on SimplePlanes website</h2>
+
+<p>Then, I selected the software <a href="www.simpleplanes.com">SimplePlanes</a> to get models of this aircraft. There are many many players, who model all kinds of aircraft and upload models to the SP site, You can find any aircraft you like. I downloaded <a href="Mosquito">mosquito here</a> made by <a href="https://www.simpleplanes.com/u/Alucard689">Alucard689</a>.</p>
+<h2 class="crossnote-header" id="green-screen-mod">Green Screen Mod</h2>
+
+<p>You should install the <a href="https://www.simpleplanes.com/Mods/View/1360127/Green-Screen-Mod">Green Screen Mod</a> before taking snapshots from inside your cockpit.</p>
+<p><img src="20230909115739_1.jpg" alt=""></p>
+<h3 class="crossnote-header" id="disassemble-the-windshield-glass-away">Disassemble the windshield glass away</h3>
+
+<p>The colored windshield glass will disturb the following green screen handling, so, all the glass parts should be deleted.</p>
+<p><img src="20230909120540_1.jpg" alt=""></p>
+<p>You must check all the connection relations among the parts, and disconnect them before deleting them, or you'll delete useful parts.</p>
+<p><img src="20230909121017_1.jpg" alt=""></p>
+<p>Deleting one by one carefully, the final work here:</p>
+<p><img src="20230909121227_1.jpg" alt=""></p>
+<p>Then, let's fly in Green Screen!</p>
+<h3 class="crossnote-header" id="green-screen-snapshot">Green Screen snapshot</h3>
+
+<p>Select the second menu, <strong>Mod Sandbox Maps</strong>,</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000003.540.png" alt=""></p>
+<p>Then, choose the Green Screen from any other sandbox maps lists</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000005.350.png" alt=""></p>
+<p>Fly! You'll find you are in red green, or blue, Select one place and take a snapshot.</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000031.409.png" alt=""></p>
+<p>Press F9 to hide the SimplePlanes GUI, and press F12 to snapshot.</p>
+<p>// video here:</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ZvinsThADYQ" title="How to take a snapshot of SimplePlane cockpit transparently" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<h2 class="crossnote-header" id="make-the-picture-transparent-in-onlyoffice">Make the picture transparent in ONLYOFFICE</h2>
+
+<p>The original snapshot picture is already, the background is colored green or red. To make the OTW part transparent, I use ONLYOFFICE instead of PhotoShop as a photo editor.</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000101.247.png" alt=""></p>
+<p>In ONLYOFFICE, there is a plugin module named <strong>Photo Editor</strong>, which is installed by default. Select the picture and open the Photo Editor to edit it.</p>
+<p>Enable brightness first,</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000111.753.png" alt=""></p>
+<p>Drag the slider right, to make the red OTW colored lighter and lighter to almost white, then,</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000119.440.png" alt=""></p>
+<p>Enable <strong>remove white</strong>, drag the slider left or right, to remove the white color, and make it transparent. Press ok to save the work, and you will see the transparent cockpit now, but the instrument dashboard is colored too light now.</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000123.805.png" alt=""></p>
+<p>Let's make it colored back,</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000138.988.png" alt=""></p>
+<p>New a slide page, set the background colored any color, in the right properties bar. Copy the light-colored transparent picture from the first page to this second page:</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000148.333.png" alt=""></p>
+<p>Open the Photo Editor plugin again and drag the brightness slider back to the left, so that the color of the flight instrument dashboard recovers to normal color,</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000155.937.png" alt=""></p>
+<p>It is completed, save as a .png file:</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000212.075.png" alt=""></p>
+<p>Make sure the filename is .png</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000215.612.png" alt=""></p>
+<p>Open it in any photo viewer, the OTW part is transparent now</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000000.000.png" alt=""></p>
+<p>The picture here</p>
+<p><img src="mosquitoHUD.png" alt=""></p>
+<h2 class="crossnote-header" id="kml-screenoverlay-maker">KML ScreenOverlay Maker</h2>
+
+<p>You should write a .kml file to reference the .png file path to load in GE, to make it easy, I have found a little software named <strong>KML ScreenOverlay Maker</strong></p>
+<p><a href="https://freegeographytools.com/2007/the-kml-screen-overlay-maker-utility">The KML Screen Overlay Maker Utility</a></p>
+<p><a href="https://freegeographytools.com/2007/kml-screen-overlay-maker-utility-concluded">KML Screen Overlay Maker Utility, Concluded</a></p>
+<p>Again, to avoid the disappearance of the too-old things on the internet, I have stored it in my space here:</p>
+<p><a href="ScreenOverlayMakerInstall.zip">ScreenOverlayMakerInstall.zip</a></p>
+<p>It is very simple.</p>
+<p><img src="overlaysettings.png" alt=""></p>
+<p>First, select the overlay graphic file, It's the .png file you have made just now.</p>
+<p>Second, Save it as a .kml file, You do not need to save it to the directory of Google Earth installation directory.</p>
+<p>Then, create a network link and open in Google Earth, This will pop up a window, let you specify where your <strong>googleearth.exe</strong> is located, Find it,  and press ok, This little tool will start Google Earth automatically, and your 2D cockpit will appear in it.</p>
+<p>In the next step, in the overlay size part, select the <strong>fraction</strong> for both x and y and set a value for them, to me, value 1 is the best, according to my cockpit resolution size.</p>
+<p>Finally, don't forget to drag the kml from temporary places to my places to save for future use.</p>
+<p><img src="saveinge.png" alt=""></p>
+<p>Also, you can open the final kml file to see what is in it, It is very simple</p>
+<pre data-role="codeBlock" data-info="kml" class="language-kml kml"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;kml xmlns="http://earth.google.com/kml/2.2"&gt;
+
+&lt;ScreenOverlay&gt;
+
+&lt;color&gt;ffffffff&lt;/color&gt;
+&lt;drawOrder&gt;99&lt;/drawOrder&gt;
+&lt;Icon&gt;
+
+&lt;href&gt;F:\GoogleEarthFlightSimulation\mosquitodown.png&lt;/href&gt;
+
+&lt;/Icon&gt;
+
+&lt;size x="1" y="1" xunits="fraction" yunits="fraction" /&gt;
+
+&lt;/ScreenOverlay&gt;
+
+&lt;/kml&gt;
+</code></pre><h1 class="crossnote-header" id="hud">HUD</h1>
+
+<p>I wanted to use the original HUD at first, but, after I imported a fight Jet from SP, I got this cockpit</p>
+<p><img src="J20HUD00.png" alt=""></p>
+<p>The 2D cockpit flight instrument dashboard overlays on top of the HUD, and a lot of important information is hidden by the image, so, I have to modify the HUD for the fight jet specifically.</p>
+<p>The cockpit image here:</p>
+<p><img src="j20.png" alt=""></p>
+<p><a href="generic%20J20.ini">And the HUD file here</a></p>
+<p>Make a backup and then modify the file <strong><a href="generic%20J20.ini">generic.ini</a></strong> in the directory <strong>hud</strong>. For my fighter jet, relocate and shrink the elements in HUD. Fortunately, this file is very simple, not longer than 160 lines, Here are my configurations.</p>
+<p><img src="J20HUDconfigure.png" alt=""></p>
+<h1 class="crossnote-header" id="the-final-work">The final work</h1>
+
+<p><img src="J20HUD01.png" alt=""></p>
+<p>2D fighter jet cockpit, hypersonic speed FDM, functional HUD instrument, reach anywhere on the earth in one hour!</p>
+<p>This video demostrated my flight from Buenos to Beijing in one hour(Video accelerated).</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/mDaCqpkQb_U" title="Fly from Buenos to Beijing in just one hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
