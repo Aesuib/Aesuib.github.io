@@ -1,0 +1,290 @@
+<!DOCTYPE html><html><head>
+      <title>HowToExportSPModelToGEFS_zhcn</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\大白云\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.7.4\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em!important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em!important;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em!important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      <h1 class="crossnote-header" id="%E5%A6%82%E4%BD%95%E5%9C%A8%E8%B0%B7%E6%9F%90%E5%9C%B0%E7%90%83%E9%A3%9E%E8%A1%8C%E6%A8%A1%E6%8B%9F%E4%B8%AD%E5%AF%BC%E5%85%A5%E7%AE%80%E5%8D%95%E9%A3%9E%E6%9C%BA%E5%BC%80%E5%8F%91%E7%9A%84%E9%A3%9E%E6%9C%BA%E6%A8%A1%E5%9E%8B">如何在谷某地球飞行模拟中导入简单飞机开发的飞机模型</h1>
+
+<p>简飞的飞友们！我并没有弃坑，只不过我不是你们想象的那样设计飞机。我之前写过一篇图文讲解如何在谷某地球里规划飞行航线：</p>
+<p><a href="https://aesuib.github.io/GoogleEarth/SR22flyingVally.html">Flying a SR-22 through the great Valley Grand Canyon</a></p>
+<p><img src="https://aesuib.github.io/GoogleEarth/SR22%E7%A9%BF%E8%B6%8A%E7%A7%91%E7%BD%97%E6%8B%89%E5%A4%9A%E5%A4%A7%E5%B3%A1%E8%B0%B7.mp4_000618.126.png" alt=""></p>
+<p>而现在，我要导入由SimplePlanes开发建模的飞机仿真模型导入进谷某中飞行。</p>
+<p>众所周知，谷某飞行模拟里面只有两款飞机可以选择：</p>
+<p><img src="GEFSSelector.png" alt=""></p>
+<p>谷某地球并不是个开源软件，我本来以为无法扩展开发新机型，直到，有一天我在电脑中搜索<strong>f16</strong>无意中在谷某地球的安装路径中找到<strong>f16.acf</strong>这么一个文件，我发现它是一个纯文本文件：</p>
+<p><img src="f16acfconfiguration.png" alt=""></p>
+<p>那就意味着我可以拿它来搞点事情了。</p>
+<h1 class="crossnote-header" id="%E6%B7%BB%E5%8A%A0%E6%96%B0%E6%A8%A1%E5%9E%8B%E4%B8%8D%E5%8F%AA%E6%98%AF%E4%BF%AE%E6%94%B9%E5%B7%B2%E6%9C%89%E6%A8%A1%E5%9E%8B">添加新模型？不，只是修改已有模型</h1>
+
+<p>使用<code>tree</code>命令来查看谷某飞行模拟的文件夹结构：</p>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash">PS C:<span class="token punctuation">\</span>Program Files<span class="token punctuation">\</span>Google<span class="token punctuation">\</span>Google Earth Pro<span class="token punctuation">\</span>client<span class="token punctuation">\</span>res<span class="token punctuation">\</span>flightsim<span class="token operator">&gt;</span> tree /f
+卷 系统 的文件夹 <span class="token environment constant">PATH</span> 列表       
+卷序列号为 64DA-4693
+C:.
+│  flightsim.ini
+│  
+├─aircraft
+│      f16.acf
+│      sr22.acf
+│      
+├─controller
+│      generic.ini
+│      genius_maxfighter_f16u.ini
+│      logitech_attack3.ini      
+│      logitech_extreme_3d.ini   
+│      logitech_force_3d.ini
+│      logitech_freedom.ini
+│      saitek_cyborg_evo.ini
+│      saitek_x52.ini
+│      speed_link_black_hawk.ini        
+│      speed_link_black_widow.ini       
+│      speed_link_cougar_flightstick.ini
+│      speed_link_dark_tornado.ini      
+│      xbox_360.ini
+│
+├─hud
+│      generic.ini
+│      sr22.ini
+│
+├─keyboard
+│      generic.ini
+│      sr22.ini
+│
+└─planet
+        earth.ini
+</pre><p>非常简单，<strong>flightsim.ini</strong>好像是根配置文件。</p>
+<p><img src="addingmyplane.png" alt=""></p>
+<p>我就在这个文件里面添加了自己飞机的一个条目，测试一下，但是，谷某地界面GUI中并未显示我新加的选项，我也没有找到谷某地球软件的界面可以在哪里进行扩展开发。</p>
+<p><img src="GEFSSelector.png" alt=""></p>
+<p>谷某地球的GUI界面并不是开源的，只能在自带的两款机型中选择，所以，下面的所有工作，都是在原有的模型基础之上修改，当然，在修改之前要先做好备份。</p>
+<h1 class="crossnote-header" id="%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84">文件结构</h1>
+
+<p><img src="filestructure.png" alt=""></p>
+<p>文件夹<strong>aircraft</strong>包含了飞行气动模型配置文件 <strong>.acf</strong>，每个文件对应一款型号，它是飞行模拟的核心配置文件。</p>
+<p>文件夹<strong>controller</strong>包含 <strong>.ini</strong>格式配置文件配置不同型号的外设飞行摇杆的使用。但是，GEFS本身就不是那种大型精细的飞行模拟软件我认为不需要连接外设，而更倾向于直接用键盘鼠标来驾驶飞行。</p>
+<p>文件夹<strong>hud</strong>包含为不同型号飞机配置HUD平显的**.ini** 配置文件，其中F16使用的是<strong>generic.ini</strong>文件。</p>
+<p>文件夹<strong>keyboard</strong>包含了用键鼠飞行的**.ini** 配置文件，默认配置就很好无需修改。</p>
+<p>文件夹<strong>planet</strong>包含了 <strong>.ini</strong>格式文件配置不同行星的参数，默认只有一个配置即我们地球自己，但是你可以为火星单独新建一个配置文件。</p>
+<p>没有驾驶舱？实际上你可以给GEFS添加一个虚拟驾驶舱画面的。</p>
+<h1 class="crossnote-header" id="%E9%A3%9E%E8%A1%8C%E5%8A%A8%E5%8A%9B%E5%AD%A6%E6%A8%A1%E5%9E%8Bfdm">飞行动力学模型FDM</h1>
+
+<p>原始的两个飞行动力学模型对于大多数飞行已经够用，但是，仍然有两个痛点。</p>
+<h2 class="crossnote-header" id="%E9%AB%98%E8%B6%85%E9%9F%B3%E9%80%9F%E9%A3%9E%E6%9C%BA">高超音速飞机</h2>
+
+<p><img src="intercontinental.png" alt=""></p>
+<p>一个痛点就是长距离跨大洋洲际飞行，我曾画过一条从亚洲飞美洲的航线，计划很完美，但飞行很无聊。GEFS并没有可以让人离开电脑休息的自动飞行模式，也没有时间加速功能，我只能必须一直握着鼠标控制稳定飞机好几个小时。</p>
+<p>我需要一款高超音速飞行的飞机，能够让我在半个小时之内飞到地球上任意地点。</p>
+<p>我们飞友有一句名言“力大砖飞”，就是说，只要动力足，板砖飞上天，所以，修改<strong>f16.acf</strong>文件：</p>
+<p><img src="HyperSonicAcf.png" alt=""></p>
+<p>增加动力减少质量，这样就能让F16飞出高超音速！</p>
+<p><a href="f16-HyperSonic.acf">点击下载高超音速飞机的.acf配置文件</a></p>
+<p>将下载的该文件重命名为f16.acf并替换谷某自身的f16.acf文件，爽去吧！</p>
+<iframe width="1280" height="708" src="https://www.youtube.com/embed/e5yWmni-MQU" title="Google Earth Pro FlightSimulation Hypersonic Aircraft Model" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<p>注意！这模型飞的太快了！驾驶她必须要轻轻操作，否则整个谷某地球软件就会崩溃，从跑道上起飞只需要把油门推动一点即可，而降落则需要把油门彻底降低到零。</p>
+<h2 class="crossnote-header" id="%E4%BD%8E%E9%80%9F%E9%AB%98%E6%9C%BA%E5%8A%A8%E7%9B%B4%E5%8D%87%E6%9C%BA">低速高机动直升机</h2>
+
+<p>另一个痛点就是在飞机上仔细观察地面地形，这就要求飞机既要飞的慢，又要转弯迅速，最好还能随处降落起飞，比如我之前飞过的这样：</p>
+<p><a href="https://aesuib.github.io/GoogleEarth/SR22flyingVally.html">Flying a SR-22 through the great Valley Grand Canyon</a></p>
+<p><img src="https://aesuib.github.io/GoogleEarth/SR22%E7%A9%BF%E8%B6%8A%E7%A7%91%E7%BD%97%E6%8B%89%E5%A4%9A%E5%A4%A7%E5%B3%A1%E8%B0%B7.mp4_000127.016.png" alt=""></p>
+<p>所以，选择一款直升飞机最合适，但是原装自带的都是固定翼飞机模型，修改为旋翼飞机的启动模型，就需要对 <strong>.acf</strong>文件里面进行重大的改动。</p>
+<p>我谷某搜索了很久，终于找到了：</p>
+<p><a href="https://googleearthcommunity.proboards.com/thread/4186/new-flyable-planes-google-earth">New Flyable Planes for Google Earth</a></p>
+<p>还有这个链接：</p>
+<p><a href="https://www.gearthblog.com/blog/archives/2009/08/planes_for_google_earth_flight_simu.html">Planes For Google Earth Flight Simulator</a></p>
+<p>但是第二个网页里面的模型下载链接都已经失效了，这网页太老了，锁眼公司的官网都已经关张了。所以，我下载了第一个页面里面的所有模型，并且抢救性挖掘保存在了我的空间里面了：</p>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>模型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="f16%20f35.acf">f16 f35.acf</a></td>
+<td>F-35</td>
+</tr>
+<tr>
+<td><a href="f16%20typhoon.acf">f16 typhoon.acf</a></td>
+<td>Typhoon</td>
+</tr>
+<tr>
+<td><a href="f16%20p51.acf">f16 p51.acf</a></td>
+<td>P-51</td>
+</tr>
+<tr>
+<td><a href="f16%20m2000.acf">f16 m2000.acf</a></td>
+<td>Mirage-2000</td>
+</tr>
+<tr>
+<td><a href="f16%20gripen.acf">f16 gripen.acf</a></td>
+<td>Gripen</td>
+</tr>
+<tr>
+<td><a href="f16%20f15.acf">f16 f15.acf</a></td>
+<td>F-15</td>
+</tr>
+<tr>
+<td><a href="f16%20su27.acf">f16 su27.acf</a></td>
+<td>Su-27</td>
+</tr>
+<tr>
+<td><a href="f16%20crj900.acf">f16 crj900.acf</a></td>
+<td>CRJ-900</td>
+</tr>
+<tr>
+<td><a href="f16%20apache.acf">f16 apache.acf</a></td>
+<td>Apache</td>
+</tr>
+</tbody>
+</table>
+<p>这些模型里面有一架旋翼机，阿帕奇Apache，使用阿帕奇的飞行动力学文件替换原装的西锐SR22的，就可以飞直升机了！</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/hyznS3mmgqQ" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<p>注意！直升机很难飞，尤其是对于飞惯了固定翼飞机的飞行员来说。</p>
+<blockquote>
+<p>记住，这架阿帕奇的起落架是固定式的，飞行时要保持伸出的状态。由于直升机没有襟翼flaps，飞行时也不要操作襟翼。猛拐弯的操作，要侧倾滚的同时按住小键盘区域的0或enter按键，没有小键盘区域的话就按住shift+左右键，这样来蹬舵转身。恢复杆和舵请按C按键或小键盘的5按键。直升机降落，要慢慢的接近降落场，轻轻的下降保持稳定的下降率。</p>
+<p>警告：不要加速超过200Knots，不仅仅是这个飞机模型不要超过速度限制，而且也是因为如果你飞地太快它将让谷某地球不堪重负崩溃而死。</p>
+</blockquote>
+<p>Apache的FDM从原装的F16改变了很多：</p>
+<p><img src="ApacheVSF16.png" alt=""></p>
+<p>你可以随意更改它。</p>
+<h1 class="crossnote-header" id="2d%E9%A9%BE%E9%A9%B6%E8%88%B1">2D驾驶舱</h1>
+
+<p>除了HUD平显，你还可以给GEFS添加一个2D驾驶舱。谷球本身是支持导入3D模型的，但是3D模型必须只能添加到地表上一个位置，或者在地球上绘制一个轨迹让3D模型运动起来，3D模型并不能贴在视角镜头上面，所以只能给飞行模拟添加一个2D驾驶舱贴图。</p>
+<p>2D驾驶舱并不是一个模拟驾驶舱，仪表板上面的飞行仪表并不能真实运作，只是一张贴图，静态的，叠加显示在窗口里渲染画面之上。但这也比原本没有驾驶舱的谷某飞行模拟好多了。一般的飞机驾驶舱飞行员仪表，飞行仪表板位于视野下侧，左右两侧有飞行驾驶舱风挡玻璃的窗框。</p>
+<p>最重要的是，风挡玻璃是透明的，这样你就可以从2D驾驶舱贴图上的风挡玻璃看穿出去，正常的看到舱外视野，缩写为OTW（Out-The-Window），你必须能从驾驶舱内飞行员头部位置看到舱外看到蓝天大地。所以，最终所需要的图片应该是.png格式，在OTW部分是透明的。</p>
+<p>开动！</p>
+<h2 class="crossnote-header" id="%E6%A0%B9%E6%8D%AE%E9%A3%9E%E8%A1%8C%E4%BB%BB%E5%8A%A1%E9%80%89%E6%8B%A9%E4%B8%80%E6%AC%BE%E9%A3%9E%E6%9C%BA%E5%9E%8B%E5%8F%B7">根据飞行任务选择一款飞机型号</h2>
+
+<p>所以首先需要制作一张驾驶舱图片。以上面所讲的<a href="#low-speed-super-maneuver-helicopter">低慢飞行</a>为例</p>
+<p>为了能在天上飞行中更好的鸟瞰大地，这架飞机应该有很大很大的舷窗风挡，而大多数固定翼飞机的风挡视角在下视方向的可视角度非常受限，所以建议最好选择一款直升机，并且飞机越小舷窗越大越好，最终，我找到了<a href="https://composite-fx.com/models/xe/">蚊式直升机</a></p>
+<p><img src="xe-model-3-ba50e3ee.jpeg" alt=""></p>
+<h2 class="crossnote-header" id="%E5%9C%A8simpleplanes%E5%AE%98%E6%96%B9%E7%BD%91%E7%AB%99%E4%B8%8A%E6%89%BE%E5%88%B0%E8%AF%A5%E6%AC%BE%E9%A3%9E%E6%9C%BA%E7%9A%84%E4%BB%BF%E7%9C%9F%E5%BB%BA%E6%A8%A1">在SimplePlanes官方网站上找到该款飞机的仿真建模</h2>
+
+<p>选择<a href="www.simpleplanes.com">SimplePlanes</a>飞行模拟软件来找到该型号飞机模型，这是沙盒建模类游戏，全世界有很多的玩家设计师，几乎为全世界所有的飞机型号建造了模型并且上传到该网站，你可以查找到任何一款模型。我最终找到了<a href="Mosquito">mosquito</a>在这里由设计师<a href="https://www.simpleplanes.com/u/Alucard689">Alucard689</a>建造的。</p>
+<h2 class="crossnote-header" id="%E7%BB%BF%E5%B9%95mod%E6%89%A9%E5%B1%95%E6%8F%92%E4%BB%B6">绿幕mod扩展插件</h2>
+
+<p>还需要安装<a href="htt://www.simpleplanes.com/Mods/View/1360127/Green-Screen-Mod">Green Screen Mod</a>，用以在驾驶舱内拍照截图驾驶舱画面。</p>
+<p><img src="20230909115739_1.jpg" alt=""></p>
+<h3 class="crossnote-header" id="%E6%8B%86%E9%99%A4%E9%A3%8E%E6%8C%A1%E6%A1%86%E6%9E%B6%E4%B8%8A%E7%9A%84%E9%A3%8E%E6%8C%A1%E7%8E%BB%E7%92%83">拆除风挡框架上的风挡玻璃</h3>
+
+<p>模型上的有色风挡玻璃会干扰在绿幕前的截图效果，所以，要手动拆除删掉这些玻璃零件。</p>
+<p><img src="20230909120540_1.jpg" alt=""></p>
+<p>必须仔细检查每一个要拆除零件的与其它零件的连接关系，断开连接后再删除，否则就会把连带的要保留的零件给一起拆除掉了。</p>
+<p><img src="20230909121017_1.jpg" alt=""></p>
+<p>一块一块地拆除窗玻璃，最终完成品在这里：</p>
+<p><img src="20230909121227_1.jpg" alt=""></p>
+<p>进入绿幕飞行吧！</p>
+<h3 class="crossnote-header" id="green-screen-snapshot">Green Screen snapshot</h3>
+
+<p>在软件首页选择菜单第二项：<strong>Mod Sandbox Maps</strong>：</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000003.540.png" alt=""></p>
+<p>然后选择绿幕地景，如果有很多地景选择项的话。</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000005.350.png" alt=""></p>
+<p>起飞！你就会发现你深陷一片红或者一片绿之中，随意选择一个位置，截图一张</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000031.409.png" alt=""></p>
+<p>按快捷键F9隐藏SP软件本身的叠加在画面最顶层的界面GUI，再按F12快捷键截图。</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/ZvinsThADYQ" title="How to take a snapshot of SimplePlane cockpit transparently" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+<h2 class="crossnote-header" id="%E4%BD%BF%E7%94%A8onlyoffice%E5%B0%86%E6%88%AA%E5%9B%BE%E4%BF%AE%E6%94%B9%E4%B8%BA%E9%80%8F%E6%98%8E%E6%95%88%E6%9E%9C">使用ONLYOFFICE将截图修改为透明效果</h2>
+
+<p>原始截图准备好了，背景是绿色或者红色这样的单一颜色。为了将OTW部分设为透明，我选择了使用ONLYOFFICE，而不是PhotoShop，来进行图片编辑。</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000101.247.png" alt=""></p>
+<p>在ONLYOFFICE里面有一个扩展插件叫做<strong>Photo Editor</strong>图片编辑功能，这是默认即安装的，选择这个图片再点击工具栏上的这个按钮就可以打开图片编辑器了。</p>
+<p>首先调整亮度brightness：</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000111.753.png" alt=""></p>
+<p>将滑块向右拖动，是的红色的OTW部分的颜色越来越浅，最后变为基本全白的样子，然后：</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000119.440.png" alt=""></p>
+<p>选中开启<strong>remove white</strong>复选框清除白色功能，左右拖动滑块，移除图片里面色彩为白色的地方的颜色信息，使得白色的地方变为透明，点击OK确认保存编辑工作，就能看见驾驶舱图片的透明玻璃效果了，但是目前的飞行仪表板部分仍然是颜色过浅的状态。</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000123.805.png" alt=""></p>
+<p>再把颜色调深回正常状态：</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000138.988.png" alt=""></p>
+<p>新建一页ppt，从右侧边栏的页面属性框中，将该页ppt的背景颜色随意设置一个非白颜色。将刚才页面中编辑好的浅色透明座舱仪表图片拷贝到这个新建的第二页ppt里面：</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000148.333.png" alt=""></p>
+<p>在图像编辑器插件中再次调节亮度滑块，向左拖动，将飞行仪表板颜色调节至正常的样子：</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000155.937.png" alt=""></p>
+<p>这样就完成了，将该图片导出另存为.png图像文件：</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000212.075.png" alt=""></p>
+<p>确保文件名后缀是.png</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000215.612.png" alt=""></p>
+<p>使用任意一款图片查看器打开，这张图片确实是背景透明的：</p>
+<p><img src="%E5%A6%82%E4%BD%95%E4%BB%8ESP%E5%AF%BC%E5%87%BA%E9%80%8F%E6%98%8E%E8%88%AA%E7%94%B5.mp4_000000.000.png" alt=""></p>
+<p>完工的蚊式驾驶舱仪表2D贴图如下</p>
+<p><img src="mosquitoHUD.png" alt=""></p>
+<h2 class="crossnote-header" id="kml%E5%B1%8F%E5%B9%95%E8%B4%B4%E5%9B%BE%E7%94%9F%E6%88%90%E5%99%A8">KML屏幕贴图生成器</h2>
+
+<p>你应该编写一个.kml文件来指定这个.png图片文件的路径，在谷地里面加载这个kml文件。为简化开发，我在网络上找到一个小工具软件，<strong>KML ScreenOverlay Maker</strong></p>
+<p><a href="https://freegeographytools.com/2007/the-kml-screen-overlay-maker-utility">The KML Screen Overlay Maker Utility</a></p>
+<p><a href="https://freegeographytools.com/2007/kml-screen-overlay-maker-utility-concluded">KML Screen Overlay Maker Utility, Concluded</a></p>
+<p>再次，为了避免互不联网上面的特别老旧的东西消失灭绝，我保护性挖掘出来存储在这里了：</p>
+<p><a href="ScreenOverlayMakerInstall.zip">ScreenOverlayMakerInstall.zip</a></p>
+<p>它非常简单：</p>
+<p><img src="overlaysettings.png" alt=""></p>
+<p>首先，选择要加载的图片，就是刚刚制作的.png文件。</p>
+<p>然后，保存出.kml文件，并不需要把它保存到谷球的安装路径中去。</p>
+<p>然后，创建一个network link，启动谷球，这会弹出一个窗口，手动指定一下你自己的<strong>googleearth.exe</strong>的路径，确认后，这个工具就会自动打开谷球，你的2D驾驶舱就会出现在画面里。</p>
+<p>下一步，在<strong>overlay size</strong>部分，x和y都选择<strong>fraction</strong>，设置一个数值，对于我自己的显示器分辨率来说选择1是最好的。</p>
+<p>最终，别忘了拖动这个kml从谷球临时位置到我的位置，保存下来以后使用。</p>
+<p><img src="saveinge.png" alt=""></p>
+<p>你也可以打开这个最终kml文件来查看里面到底是什么内容，其实很简单：</p>
+<pre data-role="codeBlock" data-info="kml" class="language-kml kml"><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;kml xmlns="http://earth.google.com/kml/2.2"&gt;
+
+&lt;ScreenOverlay&gt;
+
+&lt;color&gt;ffffffff&lt;/color&gt;
+&lt;drawOrder&gt;99&lt;/drawOrder&gt;
+&lt;Icon&gt;
+
+&lt;href&gt;F:\GoogleEarthFlightSimulation\mosquitodown.png&lt;/href&gt;
+
+&lt;/Icon&gt;
+
+&lt;size x="1" y="1" xunits="fraction" yunits="fraction" /&gt;
+
+&lt;/ScreenOverlay&gt;
+
+&lt;/kml&gt;
+</code></pre><h1 class="crossnote-header" id="hud%E5%B9%B3%E6%98%BE">HUD平显</h1>
+
+<p>我原本想使用原装HUD平显不再改动，但是，当我导入一个喷气式战斗机的驾驶舱之后，我发现效果是这样的：</p>
+<p><img src="J20HUD00.png" alt=""></p>
+<p>2D驾驶舱仪表板叠加显示在最上层，将HUD平显部分覆盖到下层去了，这样，很多重要的HUD平显信息就看不见了，所以我不得不专门为该款喷气式战斗机而修改HUD平显了。</p>
+<p>驾驶舱图片在这里：</p>
+<p><img src="j20.png" alt=""></p>
+<p><a href="generic%20J20.ini">开发完的平显HUD文件在这里</a></p>
+<p>首先备份好原始文件，然后再修改<strong>hud</strong>文件夹下的 <strong><a href="generic%20J20.ini">generic.ini</a></strong> 这个文件。对于我的战斗机来说，需要移动HUD平显中各个要素的位置并缩小各个要素的尺寸。幸好该文件非常简单，只有不到160行代码，我做了如下这些修改：</p>
+<p><img src="J20HUDconfigure.png" alt=""></p>
+<h1 class="crossnote-header" id="%E6%9C%80%E7%BB%88%E6%88%90%E5%93%81">最终成品</h1>
+
+<p><img src="J20HUD01.png" alt=""></p>
+<p>2D战斗机驾驶舱，高超音速飞行动力学FDM，有功能的HUD平显仪表画面，可以在一个小时之内飞抵地球任意位置！</p>
+<p>该视频展示了我驾驶歼20战斗机从亚洲东部的中国北京直飞南美洲阿根廷的布宜诺斯艾利斯，仅仅花费了一个小时的飞行时间，另外这个视频在飞行中段开启了加速效果因而视频缩短到只有不到半个小时。</p>
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/mDaCqpkQb_U" title="Fly from Buenos to Beijing in just one hour" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
