@@ -4,5 +4,11 @@
             "language": "markdown",
             "scheme": "file"
         }
-    ]
+    ],
+    "vs-browser.localProxyServer.cookieDomainRewrite": true,
+    "vs-browser.localProxyServer.forceLocation": true,
+    "vs-browser.proxyMode": true,
+    "vs-browser.reload.autoReloadDurationEnabled": true,
+    "vs-browser.reload.onSave": true,
+    "vs-browser.showMessageDialog": true
 }
